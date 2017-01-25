@@ -2,11 +2,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: postgres
-  password: superuser
+  username: <%= ENV['db_username'] %>
+  password: <%= ENV['db_password'] %>
   host: localhost 
-  template: template0
-  
+
 development:
   <<: *default
   database: phototourist_dev
