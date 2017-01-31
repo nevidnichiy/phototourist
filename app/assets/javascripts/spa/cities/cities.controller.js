@@ -31,7 +31,7 @@
         console.log(response);
       } 
       function edit(object) {
-        console.log("selected", object);
+        //console.log("selected", object);
         vm.city = object;        
       }
 
@@ -47,7 +47,7 @@
       function update() {
         vm.city.$update()
           .then(function(response){
-            console.log(response);
+
         })
         .catch(handleError);        
       }
@@ -55,16 +55,11 @@
       function remove() {
         vm.city.$delete()
           .then(function(response){
-            //console.log(response);
-            //remove the element from local array
             removeElement(vm.cities, vm.city);
-            //vm.foos = Foo.query();
-            //replace edit area with prototype instance
             newCity();
           })
           .catch(handleError);                
       }
-
 
       function removeElement(elements, element) {
         for (var i=0; i<elements.length; i++) {

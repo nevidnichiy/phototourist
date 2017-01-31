@@ -2,29 +2,30 @@
   <h3>Cities</h3>
 
   <form>
-    <div>
-      <label>Name:</label>
-      <input name="name"
-              ng-model="citiesVM.city.name"
-              required="required"/>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="City name"
+             ng-model="citiesVM.city.name" required="required"/>
     </div>
-
-    <button class="btn btn-default"
+    <button class="btn btn-primary"
              ng-if="!citiesVM.city.id" 
              type="submit"
              ng-click="citiesVM.create()">Create City</button>  
     <div ng-if="citiesVM.city.id">
-      <button type="submit"
+      <button class="btn btn-primary" type="submit"
               ng-click="citiesVM.update()">Update City</button>
-      <button type="submit"
+      <button class="btn btn-danger" type="submit"
               ng-click="citiesVM.remove()">Delete City</button>
     </div>               
     </form>
-
-  <ul>
-    <li ng-repeat="city in citiesVM.cities | orderBy:'name'">
-      <a ng-click="citiesVM.edit(city)">{{city.name}}</a>
-    </li>
-  </ul>
+  <div class="space20"></div>
+  <div class="list-group">
+    <a href="#" class="list-group-item" 
+                ng-repeat="city in citiesVM.cities | orderBy:'name'"
+                ng-click="citiesVM.edit(city)"
+                ng-class="citiesVM.city.id == city.id ? 'active' : ''">
+      {{city.name}}
+    </a>
+  </div>
 
 </div>
