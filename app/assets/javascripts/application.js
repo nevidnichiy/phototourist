@@ -4,11 +4,11 @@
 //= require angular-ui-router
 //= require angular-resource
 
-// require spa-demo/app.module
-// require spa-demo/app.router
-// require spa-demo/app.constant
+//= require spa/app.module
+//= require spa/app.router
+//= require spa/app.constant
 
-// require spa-demo/foos/foos.module
-// require spa-demo/foos/foos.service
-// require spa-demo/foos/foos.controller
-// require spa-demo/foos/foos.directive
+//= require spa/cities/cities.module
+//= require spa/cities/cities.service
+//= require spa/cities/cities.controller
+//= require spa/cities/cities.directive

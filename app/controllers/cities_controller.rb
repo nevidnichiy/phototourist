@@ -8,6 +8,21 @@ class CitiesController < ApplicationController
   def show
   end
   
+  def create
+    @city = City.new(city_params)
+
+    if @city.save
+      render :show, status: :created, location: @city
+    else
+      render json: @city.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @city.destroy
+    head :no_content 
+  end
+  
   private
   
   def set_city
