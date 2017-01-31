@@ -21,3 +21,5 @@
 
 # Ignore mongodb data folder
 /data
+/bower_components
+/node_modules
